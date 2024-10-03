@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm-Tech - Grocery Shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .navbar {
+            background-color: #82E09C;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: black;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #555;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 40%;
+            margin-left: 20px;
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px 0 0 20px;
+            font-size: 1em;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            border: none;
+            border-radius: 0 20px 20px 0;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            margin: 20px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 300px;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            height: auto;
+        }
+
+        .product-info {
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .rating i {
+            color: #FFA500;
+            margin-right: 5px;
+        }
+
+        .rating span {
+            font-size: 16px;
+        }
+
+        .pack-size {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .delivery-time {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .add-to-cart, .like-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 48%; /* Set width to accommodate both buttons side by side */
+            transition: background-color 0.3s;
+            margin: 5px; /* Space between buttons */
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        .like-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff; /* Default color for the heart */
+        }
+
+        .like-button.liked {
+            color: red; /* Color when liked */
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .quantity-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Space between the buttons */
+        }
+
+        .footer {
+            background-color: #82E09C;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="userhome.html">Home</a>
+            <a href="fruits.html">Fruits</a>
+            <a href="vegetables.html">Vegetables</a>
+            <a href="groceries.html">Groceries</a>
+            <a href="#">Seeds</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="icons">
+            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-user"></i>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Farm-Tech</h1>
+        <img src="your-image-source.png" alt="Fresh Produce">
+    </div>
+
+    <!-- Product Section -->
+    <div class="container">
+        <!-- Rice -->
+        <h1 class="product-title">Basmati Rice</h1>
+        <img class="product-image" src="your-rice-image-source.png" alt="Basmati Rice">
+        
+        <div class="product-info">
+            <p>Premium quality Basmati rice, perfect for all your cooking needs. Long-grain and aromatic.</p>
+            <p class="price">₹150</p>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>5.0</span>
+            </div>
+            <p class="pack-size">Pack Size: 1 kg</p>
+            <p class="delivery-time">Get it in 9 hrs</p>
+            
+            <!-- Quantity Controls -->
+            <div class="quantity-controls">
+                <button class="quantity-button" onclick="changeQuantity('rice', -1)">-</button>
+                <input type="number" value="1" class="quantity-input" min="1" id="rice-quantity">
+                <button class="quantity-button" onclick="changeQuantity('rice', 1)">+</button>
+            </div>
+        </div>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <button class="add-to-cart">Add to cart</button>
+            <button class="like-button" onclick="toggleLike(this)">❤️ Like</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Cooking Oil -->
+        <h1 class="product-title">Sunflower Cooking Oil</h1>
+        <img class="product-image" src="your-oil-image-source.png" alt="Sunflower Cooking Oil">
+        
+        <div class="product-info">
+            <p>High-quality sunflower oil, ideal for cooking and frying. A healthy choice for your kitchen.</p>
+            <p class="price">₹200</p>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>5.0</span>
+            </div>
+            <p class="pack-size">Pack Size: 1 L</p>
+            <p class="delivery-time">Get it in 9 hrs</p>
+            
+            <!-- Quantity Controls -->
+            <div class="quantity-controls">
+                <button class="quantity-button" onclick="changeQuantity('oil', -1)">-</button>
+                <input type="number" value="1" class="quantity-input" min="1" id="oil-quantity">
+                <button class="quantity-button" onclick="changeQuantity('oil', 1)">+</button>
+            </div>
+        </div>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <button class="add-to-cart">Add to cart</button>
+            <button class="like-button" onclick="toggleLike(this)">❤️ Like</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Sugar -->
+        <h1 class="product-title">Granulated Sugar</h1>
+        <img class="product-image" src="your-sugar-image-source.png" alt="Granulated Sugar">
+        
+        <div class="product-info">
+            <p>Pure granulated sugar for your baking and cooking needs. Sweeten your dishes effortlessly.</p>
+            <p class="price">₹50</p>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>5.0</span>
+            </div>
+            <p class="pack-size">Pack Size: 500g</p>
+            <p class="delivery-time">Get it in 9 hrs</p>
+            
+            <!-- Quantity Controls -->
+            <div class="quantity-controls">
+                <button class="quantity-button" onclick="changeQuantity('sugar', -1)">-</button>
+                <input type="number" value="1" class="quantity-input" min="1" id="sugar-quantity">
+                <button class="quantity-button" onclick="changeQuantity('sugar', 1)">+</button>
+            </div>
+        </div>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <button class="add-to-cart">Add to cart</button>
+            <button class="like-button" onclick="toggleLike(this)">❤️ Like</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Alsi Seeds -->
+        <h1 class="product-title">Alsi Seeds</h1>
+        <img class="product-image" src="your-alsi-seeds-image-source.png" alt="Alsi Seeds">
+        
+        <div class="product-info">
+            <p>Nutritious flax seeds rich in Omega-3 fatty acids, perfect for baking or adding to smoothies.</p>
+            <p class="price">₹100</p>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>5.0</span>
+            </div>
+            <p class="pack-size">Pack Size: 250g</p>
+            <p class="delivery-time">Get it in 9 hrs</p>
+            
+            <!-- Quantity Controls -->
+            <div class="quantity-controls">
+                <button class="quantity-button" onclick="changeQuantity('alsi', -1)">-</button>
+                <input type="number" value="1" class="quantity-input" min="1" id="alsi-quantity">
+                <button class="quantity-button" onclick="changeQuantity('alsi', 1)">+</button>
+            </div>
+        </div>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <button class="add-to-cart">Add to cart</button>
+            <button class="like-button" onclick="toggleLike(this)">❤️ Like</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Farm-Tech. All rights reserved.</p>
+    </div>
+
+    <script>
+        function changeQuantity(product, change) {
+            const quantityInput = document.getElementById(`${product}-quantity`);
+            let currentValue = parseInt(quantityInput.value);
+            currentValue += change;
+            if (currentValue < 1) {
+                currentValue = 1;
+            }
+            quantityInput.value = currentValue;
+        }
+
+        function toggleLike(button) {
+            button.classList.toggle('liked');
+            button.textContent = button.classList.contains('liked') ? '❤️ Liked' : '❤️ Like';
+        }
+    </script>
+</body>
+</html>

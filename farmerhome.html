@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Home - Farm-Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .navbar {
+            background-color: #82E09C;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: black;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #555;
+        }
+
+        .navbar .profile-icon {
+            margin-left: auto;
+        }
+
+        .navbar .profile-icon a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .navbar .profile-icon a:hover {
+            color: #555;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 50px;
+            background-color: white;
+            margin: 20px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #4CAF50;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 40px;
+            color: #4CAF50;
+        }
+
+        .feature h2 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .hero-section img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .about-us {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .about-us h2 {
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+
+        .about-us p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background-color: #82E09C;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="farmerhome.html">Home</a>
+            <a href="addproducts.html">Add Products</a>
+            <a href="feedbacks.html">Feedback</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div class="profile-icon">
+            <a href="farmerprofile.html"><i class="fas fa-user"></i></a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Welcome to Farm-Tech</h1>
+        <div class="hero-section">
+            <img src="images/banner.jpg" alt="Fresh Produce">
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <div class="feature">
+            <i class="fas fa-plus-circle"></i>
+            <h2>Add Products</h2>
+            <p>Easily add your fresh produce to the marketplace.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-comment-dots"></i>
+            <h2>Feedbacks</h2>
+            <p>Receive valuable feedback from your customers.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-user"></i>
+            <h2>Your Profile</h2>
+            <p>Manage your account and view your statistics.</p>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about-us">
+        <h2>About Us</h2>
+        <p>Welcome to Farm-Tech! We are committed to providing the freshest and highest quality produce straight from the farm to your table. Our mission is to make healthy eating accessible and enjoyable for everyone.</p>
+        <p>At Farm-Tech, we believe in sustainability and supporting local farmers. Join us in our journey to promote healthier lifestyles and a greener planet.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 Farm-Tech. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

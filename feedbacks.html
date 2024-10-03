@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback and Profit Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .navbar {
+            background-color: #82E09C;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: black;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #555;
+        }
+
+        .navbar .profile-icon {
+            margin-left: auto;
+        }
+
+        .navbar .profile-icon a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .navbar .profile-icon a:hover {
+            color: #555;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .table-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+            min-width: 600px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #82E09C;
+            color: black;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .positive {
+            color: green;
+            font-weight: bold;
+        }
+        .negative {
+            color: red;
+            font-weight: bold;
+        }
+        .neutral {
+            color: gray;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="farmerhome.html">Home</a>
+            <a href="addproducts.html">Add Products</a>
+            <a href="feedbacks.html">Feedback</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div class="profile-icon">
+            <a href="farmerprofile.html"><i class="fas fa-user"></i></a>
+        </div>
+    </div>
+
+    <h1>Feedback and Profit Report</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Feedback</th>
+                    <th>Sales</th>
+                    <th>Profit (₹)</th>
+                    <th>Customer Satisfaction (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product A</td>
+                    <td class="positive">Positive</td>
+                    <td>200</td>
+                    <td class="positive">₹15,000</td>
+                    <td>90%</td>
+                </tr>
+                <tr>
+                    <td>Product B</td>
+                    <td class="negative">Negative</td>
+                    <td>50</td>
+                    <td class="negative">₹-2,000</td>
+                    <td>40%</td>
+                </tr>
+                <tr>
+                    <td>Product C</td>
+                    <td class="neutral">Neutral</td>
+                    <td>100</td>
+                    <td class="positive">₹7,500</td>
+                    <td>75%</td>
+                </tr>
+                <tr>
+                    <td>Product D</td>
+                    <td class="positive">Positive</td>
+                    <td>300</td>
+                    <td class="positive">₹25,000</td>
+                    <td>85%</td>
+                </tr>
+                <tr>
+                    <td>Product E</td>
+                    <td class="neutral">Neutral</td>
+                    <td>150</td>
+                    <td class="positive">₹10,000</td>
+                    <td>70%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

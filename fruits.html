@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm-Tech - Grocery Shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .navbar {
+            background-color: #82E09C;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: black;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #555;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 40%;
+            margin-left: 20px;
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px 0 0 20px;
+            font-size: 1em;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            border: none;
+            border-radius: 0 20px 20px 0;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            margin: 20px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 300px;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            height: auto;
+        }
+
+        .product-info {
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .rating i {
+            color: #FFA500;
+            margin-right: 5px;
+        }
+
+        .rating span {
+            font-size: 16px;
+        }
+
+        .pack-size {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .delivery-time {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .add-to-cart, .like-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+            margin: 5px 0;
+        }
+
+        .like-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .like-button.liked {
+            color: red;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .quantity-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        .footer {
+            background-color: #82E09C;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="userhome.html">Home</a>
+            <a href="fruits.html">Fruits</a>
+            <a href="vegetables.html">Vegetables</a>
+            <a href="groceries.html">Groceries</a>
+            <a href="#">Seeds</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="icons">
+            <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            </a>
+            <!-- <a href="cart.html">
+            <i class="fas fa-heart"></i>
+            </a> -->
+            <a href="userprofile.html">
+            <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Farm-Tech</h1>
+        <img src="images/banner.jpg" alt="Fresh Produce">
+    </div>
+
+    <!-- Product Section -->
+    <div class="container">
+        <!-- Fresh Apples -->
+        <h1 class="product-title">Fresh Apples</h1>
+        <img class="product-image" src="images/Fruits/apples.jpeg" alt="Fresh Apples">
+        
+        <div class="product-info">
+            <p>Fresh Apples are rich in essential nutrients, offering a low-calorie snack that's high in fiber. They are great for digestion.</p>
+            <p class="price">₹60</p>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.8</span>
+            </div>
+            <p class="pack-size">Pack Size: 500g</p>
+            <p class="delivery-time">Get it in 9 hrs</p>
+            
+            <!-- Quantity Controls -->
+            <div class="quantity-controls">
+                <button class="quantity-button" onclick="changeQuantity('apple', -1)">-</button>
+                <input type="number" value="1" class="quantity-input" min="1" id="apple-quantity">
+                <button class="quantity-button" onclick="changeQuantity('apple', 1)">+</button>
+            </div>
+        </div>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <button class="add-to-cart" onclick="addToCart('Fresh Apples', '₹60', 500, 'images/Fruits/apples.jpeg', 'apple-quantity')">Add to cart</button>
+            <button class="like-button" onclick="toggleLike(this)">❤️ Like</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Fresh Bananas -->
+        <h1 class="product-title">Fresh Bananas</h1>
+        <img class="product-image" src="images/Fruits/banana.jpg" alt="Fresh Bananas">
+        
+        <div class="product-info">
+            <p>Fresh Bananas are a great source of potassium and a quick energy booster, perfect for a snack or smoothie.</p>
+            <p class="price">₹30</p>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>5.0</span>
+            </div>
+            <p class="pack-size">Pack Size: 1 kg</p>
+            <p class="delivery-time">Get it in 8 hrs</p>
+            
+            <!-- Quantity Controls -->
+            <div class="quantity-controls">
+                <button class="quantity-button" onclick="changeQuantity('banana', -1)">-</button>
+                <input type="number" value="1" class="quantity-input" min="1" id="banana-quantity">
+                <button class="quantity-button" onclick="changeQuantity('banana', 1)">+</button>
+            </div>
+        </div>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <button class="add-to-cart" onclick="addToCart('Fresh Bananas', '₹30', 1000, 'images/Fruits/banana.jpg', 'banana-quantity')">Add to cart</button>
+            <button class="like-button" onclick="toggleLike(this)">❤️ Like</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 Farm-Tech. All rights reserved.</p>
+    </div>
+
+    <script>
+        function toggleLike(button) {
+            button.classList.toggle('liked');
+            button.textContent = button.classList.contains('liked') ? '❤️ Liked' : '❤️ Like';
+        }
+
+        function changeQuantity(item, change) {
+            const quantityInput = document.getElementById(`${item}-quantity`);
+            let currentQuantity = parseInt(quantityInput.value);
+            currentQuantity = Math.max(1, currentQuantity + change); // Ensure quantity doesn't go below 1
+            quantityInput.value = currentQuantity;
+        }
+
+        function addToCart(name, price, weight, imageUrl, quantityInputId) {
+            const quantity = document.getElementById(quantityInputId).value;
+
+            // Create a product object
+            const product = {
+                name: name,
+                price: price,
+                weight: weight + 'g', // or kg if needed
+                imageUrl: imageUrl,
+                quantity: quantity
+            };
+
+            // Check if a cart already exists in local storage
+            let cart = localStorage.getItem('cart');
+            cart = cart ? JSON.parse(cart) : [];
+
+            // Check if the product is already in the cart
+            const existingProduct = cart.find(p => p.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity = parseInt(existingProduct.quantity) + parseInt(quantity); // Update quantity
+            } else {
+                cart.push(product); // Add new product to cart
+            }
+
+            // Save the updated cart back to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Redirect to the cart page
+            window.location.href = "cart.html";
+        }
+    </script>
+</body>
+</html>

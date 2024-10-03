@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            margin: 0;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .profile-icon {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        .container {
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+       
+        
+        <ul>
+            <li><a href="adminhome.html">Admin Dashboard</a></li>
+            <li><a href="addfarmer.html">Add Farmer</a></li>
+            <li><a href="buyerdetails.html">Buyer Details</a></li>
+            <li><a href="farmerdetails.html">Farmer Details</a></li>
+            
+        </ul>
+        <a href="adminprofile.html" title="Profile"></a>
+        <div class="profile-icon" title="Profile">
+            <img src="profile-icon.png" alt="Profile" style="width: 20px; height: 20px;">
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Welcome to the Admin Dashboard</h2>
+        <div class="hero-section">
+            <img src="images/banner.jpg" alt="Fresh Produce">
+        </div>
+        
+        <section id="add-farmer">
+            <h3>Add Farmer</h3>
+            <p>Here you can add new farmers to the system.</p>
+        </section>
+        
+        <section id="buyer-details">
+            <h3>Buyer Details</h3>
+            <p>View and manage buyer information here.</p>
+        </section>
+        
+        <section id="feedbacks">
+            <h3>Feedbacks</h3>
+            <p>View feedback from users and customers.</p>
+        </section>
+        
+        <section id="about-us">
+            <h3>About Us</h3>
+            <p>Learn more about our organization and mission.</p>
+        </section>
+        
+        <section id="profile">
+            <h3>Profile</h3>
+            <p>Manage your admin profile settings here.</p>
+        </section>
+    </div>
+
+</body>
+</html>

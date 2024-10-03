@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm-Tech - Grocery Shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .navbar {
+            background-color: #82E09C;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: black;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #555;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 40%;
+            margin-left: 20px;
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px 0 0 20px;
+            font-size: 1em;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            border: none;
+            border-radius: 0 20px 20px 0;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            margin: 20px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .category {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .category img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .about-us {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .about-us h2 {
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+
+        .about-us p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background-color: #82E09C;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icons i {
+            color: black;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="#">Home</a>
+           
+            <a href="fruits.html">Fruits</a>
+            <a href="vegetables.html">Vegetables</a>
+            <a href="groceries.html">Groceries</a>
+            
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="icons">
+           
+            <a href="cart.html" style="text-decoration: none; color: black;">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <!-- <a href="wishlist.html" style="text-decoration: none; color: black;">
+                <i class="fas fa-heart"></i>
+            </a> -->
+            <a href="userprofile.html" style="text-decoration: none; color: black;">
+                <i class="fas fa-user"></i>
+            </a>
+
+        </div>
+        
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+       
+        <img src="images/banner.jpg" alt="Fresh Produce">
+    </div>
+
+    <!-- Categories Section -->
+    <div class="categories">
+        <div class="category">
+            <a href="fruits.html">
+            <img src="images/fruits.jpg" alt="Fruits">
+            </a>
+            <h3>Fruits</h3>
+        </div>
+        <div class="category">
+            <a href="vegetables.html">
+            <img src="images/veg.jpg" alt="Vegetables">
+            </a>
+            <h3>Vegetables</h3>
+        </div>
+        <div class="category">
+            <a href="groceries.html">
+            <img src="images/grocerie.jpeg" alt="Groceries">
+            </a>
+            <h3>Groceries</h3>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about-us">
+        <h2>About Us</h2>
+        <p>Welcome to Farm-Tech! We are committed to providing the freshest and highest quality produce straight from the farm to your table. Our mission is to make healthy eating accessible and enjoyable for everyone.</p>
+        <p>At Farm-Tech, we believe in sustainability and supporting local farmers. Join us in our journey to promote healthier lifestyles and a greener planet.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 Farm-Tech. All rights reserved.
+    </div>
+
+</body>
+</html>

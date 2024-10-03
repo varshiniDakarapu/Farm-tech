@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product - Farm-Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .navbar {
+            background-color: #82E09C;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: black;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #555;
+        }
+
+        .navbar .profile-icon {
+            margin-left: auto;
+        }
+
+        .navbar .profile-icon a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .navbar .profile-icon a:hover {
+            color: #555;
+        }
+
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            background-color: #82E09C;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .category-select {
+            margin-top: 10px;
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="farmerhome.html">Home</a>
+            <a href="addproducts.html">Add Products</a>
+            <a href="feedbacks.html">Feedback</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div class="profile-icon">
+            <a href="farmerprofile.html"><i class="fas fa-user"></i></a>
+        </div>
+    </div>
+
+    <!-- Product Addition Form -->
+    <div class="container">
+        <h1>Add a New Product</h1>
+        <form id="product-form">
+            <input type="text" id="product-name" placeholder="Product Name" required>
+            <input type="number" id="product-price" placeholder="Price (₹)" required>
+            <input type="file" id="product-image" accept="image/*" required>
+            <textarea id="product-description" placeholder="Description" rows="4" required></textarea>
+            <input type="text" id="pack-size" placeholder="Pack Size (e.g., 500g)" required>
+            <input type="text" id="delivery-time" placeholder="Delivery Time (e.g., 9 hrs)" required>
+            
+            <select id="product-category" class="category-select" required>
+                <option value="">Select Category</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Seeds">Seeds</option>
+            </select>
+
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 Farm-Tech. All rights reserved.</p>
+    </div>
+
+    <script>
+        document.getElementById('product-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('product-name').value;
+            const price = document.getElementById('product-price').value;
+            const imageInput = document.getElementById('product-image');
+            const imageFile = imageInput.files[0];
+            const description = document.getElementById('product-description').value;
+            const packSize = document.getElementById('pack-size').value;
+            const deliveryTime = document.getElementById('delivery-time').value;
+            const category = document.getElementById('product-category').value;
+
+            // Convert the image file to a Base64 string
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                const imageBase64 = reader.result;
+
+                const product = {
+                    name: name,
+                    price: price,
+                    image: imageBase64,
+                    description: description,
+                    packSize: packSize,
+                    deliveryTime: deliveryTime,
+                    category: category
+                };
+
+                // Check if a product list already exists in local storage
+                let products = localStorage.getItem('products');
+                products = products ? JSON.parse(products) : [];
+
+                // Add the new product to the list
+                products.push(product);
+
+                // Save the updated product list back to local storage
+                localStorage.setItem('products', JSON.stringify(products));
+
+                alert('Product added successfully!');
+
+                // Redirect to fruits.html
+                window.location.href = "farmersuccess.html";
+            };
+
+            // Read the image file as a data URL
+            reader.readAsDataURL(imageFile);
+        });
+    </script>
+</body>
+</html>

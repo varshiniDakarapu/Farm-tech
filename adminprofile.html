@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile - Farm-Tech</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logout {
+            background-color: #f44336;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout:hover {
+            background-color: #d32f2f;
+        }
+
+        .profile-container {
+            margin-top: 60px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin-right: 20px;
+        }
+
+        .profile-header h2 {
+            margin: 0;
+        }
+
+        .profile-content {
+            margin-top: 20px;
+        }
+
+        .profile-content h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .profile-content p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .actions-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .action-card {
+            background-color: #82E09C;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .action-card a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .action-card a:hover {
+            color: #555;
+        }
+
+        .action-card h4 {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .action-card {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <ul>
+            <li><a href="adminhome.html">Admin Dashboard</a></li>
+            <li><a href="addfarmer.html">Add Farmer</a></li>
+            <li><a href="buyerdetails.html">Buyer Details</a></li>
+            <li><a href="farmerdetails.html">Farmer Details</a></li>
+        </ul>
+        <a href="adminl.html" class="logout">Logout</a>
+    </div>
+
+    <!-- Admin Profile Section -->
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="images/admin-profile.jpg" alt="Admin Profile Picture">
+            <h2>John Doe</h2>
+        </div>
+        <div class="profile-content">
+            <h3>Profile Information</h3>
+            <p><strong>Email:</strong> admin@farmtech.com</p>
+            <p><strong>Role:</strong> Administrator</p>
+            <p><strong>Joined:</strong> January 2023</p>
+        </div>
+
+        <div class="actions-container">
+            <div class="action-card">
+                <h4>Manage Products</h4>
+                <a href="manageproducts.html">Go to Products</a>
+            </div>
+            <div class="action-card">
+                <h4>View Feedbacks</h4>
+                <a href="viewfeedback.html">Go to Feedbacks</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

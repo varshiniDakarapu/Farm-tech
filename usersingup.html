@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #82E09C;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            max-width: 100%;
+        }
+
+        .container h1 {
+            font-size: 2.2em;
+            color: black;
+            margin-bottom: 25px;
+        }
+
+        .register-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-container {
+            width: 100%;
+            margin: 12px 0;
+        }
+
+        .register-form label {
+            text-align: left;
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: black;
+        }
+
+        .register-form input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+
+        .register-form button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .register-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form class="register-form" onsubmit="return validateForm(event)">
+            <!-- Email Input -->
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Phone Number Input -->
+            <div class="input-container">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required pattern="^\d{10}$">
+            </div>
+
+            <!-- Username Input -->
+            <div class="input-container">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required pattern="^[a-zA-Z0-9]{5,15}$">
+            </div>
+
+            <!-- Password Input -->
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required minlength="6">
+            </div>
+
+            <!-- Register Button -->
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Email Validation
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            // Phone Number Validation
+            var phonePattern = /^\d{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return false;
+            }
+
+            // Username Validation
+            var usernamePattern = /^[a-zA-Z0-9]{5,15}$/;
+            if (!usernamePattern.test(username)) {
+                alert('Username must be 5-15 characters long and contain only letters and numbers.');
+                return false;
+            }
+
+            // Password Validation
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return false;
+            }
+
+            // If all validations pass, redirect to register.html
+            window.location.href = "register.html";
+            return true; // Optional: This can be used to signify that form validation passed
+        }
+
+        // Function to validate email using regex
+        function validateEmail(email) {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>
